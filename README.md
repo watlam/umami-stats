@@ -24,10 +24,10 @@
 ## 截图
 
 ### 设置页面
-![设置页面](screenshot-1.png)
+![设置页面](screenshot-2.png)
 
 ### 仪表盘
-![仪表盘](screenshot-2.png)
+![仪表盘](screenshot-1.png)
 
 ## 安装
 
