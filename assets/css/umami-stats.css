@@ -1,0 +1,188 @@
+/* 前端统计显示样式 */
+.umami-stats-widget {
+    margin: 10px 0;
+}
+
+.umami-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+}
+
+.umami-stats-grid-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.umami-stat-card {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+}
+
+.umami-stat-card:hover {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transform: translateY(-1px);
+}
+
+.umami-stat-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.umami-stat-todayVisitors .umami-stat-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.umami-stat-todayVisits .umami-stat-icon {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.umami-stat-monthVisits .umami-stat-icon {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.umami-stat-totalVisits .umami-stat-icon {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.umami-stat-icon .dashicons {
+    color: #fff;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+.umami-stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.umami-stat-label {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.umami-stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e1e1e;
+    line-height: 1.2;
+}
+
+/* 内联样式 */
+.umami-stats-inline {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.umami-stats-inline .umami-stat-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.umami-stats-inline .umami-stat-label {
+    color: #666;
+}
+
+.umami-stats-inline .umami-stat-value {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Widget 样式 */
+.umami-widget-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.umami-widget-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.umami-widget-stat:last-child {
+    border-bottom: none;
+}
+
+.umami-widget-label {
+    font-size: 13px;
+    color: #666;
+}
+
+.umami-widget-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* 错误提示 */
+.umami-stats-error {
+    padding: 10px 15px;
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 4px;
+    color: #856404;
+    font-size: 13px;
+}
+
+/* 页脚样式 */
+.umami-footer-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px 0;
+    font-size: 13px;
+}
+
+.umami-footer-stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.umami-footer-stat .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    color: #666;
+}
+
+.umami-footer-stat-value {
+    font-weight: 600;
+}
+
+/* 响应式 */
+@media screen and (max-width: 600px) {
+    .umami-stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .umami-stat-value {
+        font-size: 18px;
+    }
+}

@@ -1,1 +1,154 @@
-1
+.umami-stats-admin-wrap {
+    max-width: 1200px;
+}
+
+.umami-stats-admin-wrap h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.umami-stats-admin-wrap h1 .dashicons {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+}
+
+.umami-admin-card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.umami-admin-card h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.umami-admin-card h3 {
+    margin: 15px 0 10px;
+    font-size: 13px;
+}
+
+.umami-admin-field {
+    margin-bottom: 20px;
+}
+
+.umami-admin-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.umami-admin-field input[type="url"],
+.umami-admin-field input[type="text"],
+.umami-admin-field input[type="password"] {
+    width: 100%;
+    max-width: 500px;
+}
+
+.umami-admin-field .description {
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.umami-admin-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.umami-api-info {
+    background: #f7f7f7;
+    border-left: 4px solid #0073aa;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.umami-api-info h3 {
+    margin-top: 0;
+}
+
+.umami-api-info code {
+    background: #e0e0e0;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.umami-api-info pre {
+    background: #282828;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 12px;
+}
+
+/* 设置页面帮助提示 */
+.umami-help-tip {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: #888;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 16px;
+    font-size: 11px;
+    cursor: help;
+    margin-left: 5px;
+    position: relative;
+}
+
+.umami-help-tip:hover::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+/* 状态指示 */
+.umami-status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.umami-status-indicator.success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.umami-status-indicator.error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.umami-status-indicator.warning {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.umami-status-indicator .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
