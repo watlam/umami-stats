@@ -43,7 +43,7 @@ class Umami_Stats_Admin_Settings {
     }
 
     public function register_settings() {
-        register_setting('umami_stats_settings', 'umami_stats_settings', [
+        register_setting('umami_stats_settings_group', 'umami_stats_settings', [
             'sanitize_callback' => [$this, 'sanitize_settings']
         ]);
 
@@ -51,14 +51,14 @@ class Umami_Stats_Admin_Settings {
             'umami_stats_main_section',
             'Umami API 配置',
             null,
-            'umami-stats'
+            'umami_stats_settings_page'
         );
 
         add_settings_field(
             'umami_url',
             'Umami 实例地址',
             [$this, 'render_umami_url_field'],
-            'umami-stats',
+            'umami_stats_settings_page',
             'umami_stats_main_section'
         );
 
@@ -66,7 +66,7 @@ class Umami_Stats_Admin_Settings {
             'website_id',
             '网站 ID',
             [$this, 'render_website_id_field'],
-            'umami-stats',
+            'umami_stats_settings_page',
             'umami_stats_main_section'
         );
 
@@ -74,7 +74,7 @@ class Umami_Stats_Admin_Settings {
             'token',
             'API Token',
             [$this, 'render_token_field'],
-            'umami-stats',
+            'umami_stats_settings_page',
             'umami_stats_main_section'
         );
 
@@ -82,7 +82,7 @@ class Umami_Stats_Admin_Settings {
             'timezone',
             '时区',
             [$this, 'render_timezone_field'],
-            'umami-stats',
+            'umami_stats_settings_page',
             'umami_stats_main_section'
         );
 
@@ -90,7 +90,7 @@ class Umami_Stats_Admin_Settings {
             'cache_time',
             '缓存时间（秒）',
             [$this, 'render_cache_time_field'],
-            'umami-stats',
+            'umami_stats_settings_page',
             'umami_stats_main_section'
         );
     }
@@ -471,19 +471,18 @@ class Umami_Stats_Admin_Settings {
                     <span class="dashicons dashicons-admin-generic" style="margin-right: 8px;"></span>
                     API 配置
                 </h2>
-                <form action="options.php" method="post">
-                <?php
-                    settings_fields('umami_stats_settings');
-                    do_settings_sections('umami-stats');
-                ?>
-                <div class="umami-buttons-row">
-                    <?php submit_button('保存设置', 'primary', 'submit', false); ?>
-                    <form method="post" style="display: inline;">
-                        <?php wp_nonce_field('umami_test_connection'); ?>
-                        <input type="submit" name="umami_test_connection" class="button" value="测试连接">
-                    </form>
-                </div>
-                </form>
+        <form action="options.php" method="post">
+        <?php
+            settings_fields('umami_stats_settings_group');
+            do_settings_sections('umami_stats_settings_page');
+            submit_button('保存设置', 'primary');
+        ?>
+        </form>
+
+        <form method="post">
+            <?php wp_nonce_field('umami_test_connection'); ?>
+            <input type="submit" name="umami_test_connection" class="button" value="测试连接">
+        </form>
             </div>
             
             <!-- 三等分布局 -->
